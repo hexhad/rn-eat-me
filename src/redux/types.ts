@@ -1,0 +1,5 @@
+export const DUMMY = {
+  LOADING: 'DUMMY/LOADING',
+  SUCCESS: 'DUMMY/SUCCESS',
+  FAILED: 'DUMMY/FAILED',
+};
