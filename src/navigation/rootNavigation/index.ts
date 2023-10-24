@@ -34,7 +34,7 @@ const goBack = () => {
 
 // [{ name: ScreenNames.ONBOARDING_SCREEN }]
 
-const restStack = (routes) => {
+const restStack = (routes: {routes: any}) => {
   if (navigationRef.isReady()) {
     const resetAction = CommonActions.reset({
       index: 1,

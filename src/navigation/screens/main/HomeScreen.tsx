@@ -1,11 +1,11 @@
-import React, { memo, useEffect } from "react";
+import React, {memo, useEffect} from 'react';
 import {Platform, StyleSheet, Text, View} from 'react-native';
 import {FONTS} from '../../../constants/fonts';
 import Icon from 'react-native-vector-icons/Feather';
 import SplashScreen from 'react-native-splash-screen';
 import {connect} from 'react-redux';
 
-const mapProps = (state) => {
+const mapProps = (state: {state: any}) => {
   console.log(state);
   return {};
 };
