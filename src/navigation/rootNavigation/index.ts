@@ -1,4 +1,8 @@
-import { CommonActions, createNavigationContainerRef, StackActions } from "@react-navigation/native";
+import {
+  CommonActions,
+  createNavigationContainerRef,
+  StackActions,
+} from '@react-navigation/native';
 
 export const navigationRef = createNavigationContainerRef();
 
@@ -39,8 +43,6 @@ const restStack = (routes) => {
     navigationRef.dispatch(resetAction);
   }
 };
-
-
 
 export const RootNavigation = {
   navigate,

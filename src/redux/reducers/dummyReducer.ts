@@ -1,4 +1,4 @@
-import { DUMMY } from "../types";
+import {DUMMY} from '../types';
 
 const initialState = {
   dummy: {
@@ -8,7 +8,7 @@ const initialState = {
   },
 };
 
-export default (state = initialState, action) => {
+export default (state = initialState, action: {type: any; payload: any}) => {
   switch (action.type) {
     case DUMMY.LOADING:
       return {
