@@ -12,14 +12,14 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-eatMe-eatMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-eatMe-eatMeTests.a */; };
-		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D801C6F031AD4FB98176F56C /* Roboto Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F16293DAE3543A5A89A28BA /* Roboto Regular.ttf */; };
 		1ADB36ADF86F401E9FACCBD9 /* IBM Plex Sans Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9586F5650871451AB926A58B /* IBM Plex Sans Bold.ttf */; };
-		3A3D210E513B4B3683DA7FA8 /* IBM Plex Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 504AA2BFE03740ABB3EF28DB /* IBM Plex Sans Light.ttf */; };
 		30C1020A0F1B43CFB574BEA1 /* IBM Plex Sans Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 05140E42D69342A9A87120FB /* IBM Plex Sans Medium.ttf */; };
+		3A3D210E513B4B3683DA7FA8 /* IBM Plex Sans Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 504AA2BFE03740ABB3EF28DB /* IBM Plex Sans Light.ttf */; };
+		7699B88040F8A987B510C191 /* libPods-eatMe-eatMeTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-eatMe-eatMeTests.a */; };
 		838CA67E1B18476DAC18CED2 /* IBM Plex Sans Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A4CE351A8D6F4C1AB8D10DFE /* IBM Plex Sans Regular.ttf */; };
+		845A1BF62AE84E7B0063AB1B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 845A1BF52AE84E7B0063AB1B /* LaunchScreen.storyboard */; };
 		91D7B5E1815549A2BF607F24 /* IBM Plex Sans Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1A99B95CDA684FFB93EDCB09 /* IBM Plex Sans Thin.ttf */; };
+		D801C6F031AD4FB98176F56C /* Roboto Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 5F16293DAE3543A5A89A28BA /* Roboto Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +36,7 @@
 		00E356EE1AD99517003FC87E /* eatMeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = eatMeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* eatMeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = eatMeTests.m; sourceTree = "<group>"; };
+		05140E42D69342A9A87120FB /* IBM Plex Sans Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBM Plex Sans Medium.ttf"; path = "../src/assets/fonts/IBM Plex Sans Medium.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* eatMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = eatMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = eatMe/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = eatMe/AppDelegate.mm; sourceTree = "<group>"; };
@@ -43,11 +44,14 @@
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = eatMe/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = eatMe/main.m; sourceTree = "<group>"; };
 		19F6CBCC0A4E27FBF8BF4A61 /* libPods-eatMe-eatMeTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eatMe-eatMeTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A99B95CDA684FFB93EDCB09 /* IBM Plex Sans Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBM Plex Sans Thin.ttf"; path = "../src/assets/fonts/IBM Plex Sans Thin.ttf"; sourceTree = "<group>"; };
 		3B4392A12AC88292D35C810B /* Pods-eatMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eatMe.debug.xcconfig"; path = "Target Support Files/Pods-eatMe/Pods-eatMe.debug.xcconfig"; sourceTree = "<group>"; };
+		504AA2BFE03740ABB3EF28DB /* IBM Plex Sans Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBM Plex Sans Light.ttf"; path = "../src/assets/fonts/IBM Plex Sans Light.ttf"; sourceTree = "<group>"; };
 		5709B34CF0A7D63546082F79 /* Pods-eatMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eatMe.release.xcconfig"; path = "Target Support Files/Pods-eatMe/Pods-eatMe.release.xcconfig"; sourceTree = "<group>"; };
 		5B7EB9410499542E8C5724F5 /* Pods-eatMe-eatMeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eatMe-eatMeTests.debug.xcconfig"; path = "Target Support Files/Pods-eatMe-eatMeTests/Pods-eatMe-eatMeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		5DCACB8F33CDC322A6C60F78 /* libPods-eatMe.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-eatMe.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = eatMe/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5F16293DAE3543A5A89A28BA /* Roboto Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto Regular.ttf"; path = "../src/assets/fonts/Roboto Regular.ttf"; sourceTree = "<group>"; };
+		845A1BF52AE84E7B0063AB1B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = eatMe/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		84A13FF22AE82C2B00B7A6FE /* Fontisto.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Fontisto.ttf; sourceTree = "<group>"; };
 		84A13FF32AE82C2B00B7A6FE /* Octicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Octicons.ttf; sourceTree = "<group>"; };
 		84A13FF42AE82C2B00B7A6FE /* Feather.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Feather.ttf; sourceTree = "<group>"; };
@@ -68,13 +72,9 @@
 		84A140032AE82C2B00B7A6FE /* FontAwesome6_Brands.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = FontAwesome6_Brands.ttf; sourceTree = "<group>"; };
 		84A140042AE82C2B00B7A6FE /* MaterialIcons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = MaterialIcons.ttf; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-eatMe-eatMeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-eatMe-eatMeTests.release.xcconfig"; path = "Target Support Files/Pods-eatMe-eatMeTests/Pods-eatMe-eatMeTests.release.xcconfig"; sourceTree = "<group>"; };
+		9586F5650871451AB926A58B /* IBM Plex Sans Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBM Plex Sans Bold.ttf"; path = "../src/assets/fonts/IBM Plex Sans Bold.ttf"; sourceTree = "<group>"; };
+		A4CE351A8D6F4C1AB8D10DFE /* IBM Plex Sans Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "IBM Plex Sans Regular.ttf"; path = "../src/assets/fonts/IBM Plex Sans Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		5F16293DAE3543A5A89A28BA /* Roboto Regular.ttf */ = {isa = PBXFileReference; name = "Roboto Regular.ttf"; path = "../src/assets/fonts/Roboto Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		9586F5650871451AB926A58B /* IBM Plex Sans Bold.ttf */ = {isa = PBXFileReference; name = "IBM Plex Sans Bold.ttf"; path = "../src/assets/fonts/IBM Plex Sans Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		504AA2BFE03740ABB3EF28DB /* IBM Plex Sans Light.ttf */ = {isa = PBXFileReference; name = "IBM Plex Sans Light.ttf"; path = "../src/assets/fonts/IBM Plex Sans Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		05140E42D69342A9A87120FB /* IBM Plex Sans Medium.ttf */ = {isa = PBXFileReference; name = "IBM Plex Sans Medium.ttf"; path = "../src/assets/fonts/IBM Plex Sans Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		A4CE351A8D6F4C1AB8D10DFE /* IBM Plex Sans Regular.ttf */ = {isa = PBXFileReference; name = "IBM Plex Sans Regular.ttf"; path = "../src/assets/fonts/IBM Plex Sans Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		1A99B95CDA684FFB93EDCB09 /* IBM Plex Sans Thin.ttf */ = {isa = PBXFileReference; name = "IBM Plex Sans Thin.ttf"; path = "../src/assets/fonts/IBM Plex Sans Thin.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,8 +122,8 @@
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
-				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
 				13B07FB71A68108700A75B9A /* main.m */,
+				845A1BF52AE84E7B0063AB1B /* LaunchScreen.storyboard */,
 			);
 			name = eatMe;
 			sourceTree = "<group>";
@@ -315,8 +315,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				845A1BF62AE84E7B0063AB1B /* LaunchScreen.storyboard in Resources */,
 				D801C6F031AD4FB98176F56C /* Roboto Regular.ttf in Resources */,
 				1ADB36ADF86F401E9FACCBD9 /* IBM Plex Sans Bold.ttf in Resources */,
 				3A3D210E513B4B3683DA7FA8 /* IBM Plex Sans Light.ttf in Resources */,
@@ -679,10 +679,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 			};
@@ -752,10 +749,7 @@
 					"-DFOLLY_MOBILE=1",
 					"-DFOLLY_USE_LIBCPP=1",
 				);
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					" ",
-				);
+				OTHER_LDFLAGS = "$(inherited)  ";
 				REACT_NATIVE_PATH = "${PODS_ROOT}/../../node_modules/react-native";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
