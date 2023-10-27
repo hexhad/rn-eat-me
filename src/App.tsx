@@ -6,6 +6,9 @@ import {Provider} from 'react-redux';
 import {buildProvidersTree} from './services/mainProvider';
 import {store} from './redux/store';
 import { navigationRef as ref } from "./navigation/rootNavigation";
+import { createDrawerNavigator } from "@react-navigation/drawer";
+import AuthStack from "./navigation/stacks/AuthStack";
+
 
 
 const App = (): JSX.Element => {
@@ -16,7 +19,8 @@ const App = (): JSX.Element => {
 
   return (
     <ProviderTree>
-      <SecuredStack />
+      {/*<SecuredStack />*/}
+      <AuthStack/>
     </ProviderTree>
   );
 };

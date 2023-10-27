@@ -11,7 +11,7 @@ import {
   Text,
   View,
   ImageBackground,
-  useWindowDimensions,
+  useWindowDimensions, TextInput,
 } from "react-native";
 import { FONTS } from "../../../constants/fonts";
 import Icon from "react-native-vector-icons/Feather";
@@ -20,25 +20,19 @@ import { connect } from "react-redux";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { IMAGES } from "../../../assets/images";
-import Button from "../../../components/Button";
+import Button from "../../../components/buttons/Button";
 import { RootNavigation } from "../../rootNavigation";
 import { SCREEN_NAMES } from "../../../constants/screens";
-
-const beanDummy = [
-  "acc",
-  "abcxxxcc",
-  "axbccc",
-  "ccc",
-  "xxxxxabccc",
-  "abccc",
-  "acc",
-  "abcxxxcc",
-  "axbccc",
-  "ccc",
-  "xxxxxabccc",
-  "abccc",
-];
-
+import { COLORS } from "../../../constants/colors";
+import ButtonBarWithImage from "../../../components/buttons/ButtonBarWithImage";
+import ButtonBar from "../../../components/buttons/ButtonBar";
+import CircleButton from "../../../components/buttons/CircleButton";
+import FoodItem from "../../../components/listItems/FoodItem";
+import { dummyData } from "../../../constants/dummyData";
+import Bean from "../../../components/buttons/Bean";
+import BeanBar from "../../../components/buttons/BeanBar";
+import BottomPopUp from "../../../components/modals/BottomPopUp";
+import HeaderWithSearchAndAccount from "../../../components/headers/HeaderWithSearchAndAccount";
 
 const mapProps = (state: {state: any}) => {
   console.log(state);
@@ -50,7 +44,7 @@ const connector = connect(mapProps, mapDispatch);
 
 const HomeScreen = () => {
     const [place, setPlace] = useState(0);
-
+    const [deliveryMethod, setDeliveryMethod] = useState(false);
 
     const scrollRef = useRef({
       waitForInteraction: true,
@@ -59,6 +53,14 @@ const HomeScreen = () => {
       itemVisiblePercentThreshold: 75,
     });
     const beanRef = useRef();
+    const handleViewableItemsChanged = useRef(({ viewableItems, changed }) => {
+      let sizeOfTheArray = viewableItems[0]?.index;
+      setPlace(sizeOfTheArray);
+      if(dummyData.length>sizeOfTheArray){
+        console.log('sizeOfTheArray',sizeOfTheArray);
+        beanRef.current?.scrollToIndex({ animated: true, index: sizeOfTheArray+1 ?? 0 });
+      }
+    });
 
     useEffect(() => {
       if (Platform.OS === "android") {
@@ -66,69 +68,25 @@ const HomeScreen = () => {
       }
     }, []);
 
-    useEffect(() => {
-      console.log(place);
-
-    }, [place]);
 
     const { width } = useWindowDimensions();
 
 
-    const handleViewableItemsChanged = useRef(({ viewableItems, changed }) => {
-      setPlace(viewableItems[0]?.index);
-      console.log(viewableItems[0]?.index);
-      beanRef.current?.scrollToIndex({ animated: true, index: viewableItems[0]?.index ?? 0 });
-    });
-
-
-    const ButtonBar = ({ header, desc, icon, mainColor='#2e3333', onPress }) => {
-      return (
-        <TouchableOpacity onPress={onPress} style={{ flexDirection: "row", alignItems: "center", marginVertical:5}}>
-          <View>
-            <Icon name={icon} size={20} color={mainColor} style={{ marginRight: 10 }} />
-          </View>
-          <View>
-            <Text style={{ fontFamily: FONTS.MEDIUM,fontSize:15, color:mainColor}}>
-              {header}
-            </Text>
-            <Text style={{ fontFamily: FONTS.LIGHT,fontSize:13 }}>
-              {desc}
-            </Text>
-          </View>
-          <View style={{ marginLeft: "auto" }}>
-            <Icon name={"chevron-right"} size={20} color="#03b9aa" />
-          </View>
-        </TouchableOpacity>
-      );
+    const onPressInfo = () => {
+      RootNavigation.navigate(SCREEN_NAMES.INFO_MODAL);
     };
-    const ButtonBarWithImage = ({ header, desc, imageLink=IMAGES.METHOD_DELEVER,method='Deliver' }) => {
-      return (
-        <TouchableOpacity style={{ flexDirection: "row", alignItems: "center", marginVertical:15}}>
-          <View>
-            <Image source={imageLink} style={{height:25,width:25,marginRight:5}}/>
-          </View>
-          <View>
-            <Text style={{ fontFamily: FONTS.MEDIUM,fontSize:15 }}>
-              {method}
-            </Text>
-          </View>
-          <View style={{ marginLeft: "auto" }}>
-            <Text style={{ fontFamily: FONTS.MEDIUM,fontSize:13, color:"#03b9aa"}}>
-              Change
-            </Text>
-
-          </View>
-        </TouchableOpacity>
-      );
+    const onPressSearch = () => {
+      RootNavigation.navigate(SCREEN_NAMES.SEARCH_MODAL);
+    };
+    const onPressDeliveryMethod = () => {
+      setDeliveryMethod(true)
     };
 
-    const infoOnPress = () => {
-      console.log("infoOnPress");
-      RootNavigation.navigate(SCREEN_NAMES.MODAL)
-    }
+
     const headerComponent = () => {
+
       return (
-        <View style={{backgroundColor:'#FFF'}}>
+        <View style={{ backgroundColor: "#FFF" }}>
           <ImageBackground
             style={{ height: 200 }}
             resizeMode={"cover"}
@@ -155,60 +113,10 @@ const HomeScreen = () => {
             </View>
             <View style={{ marginHorizontal: 20 }}>
 
-              <ButtonBar icon={'info'} header={"Info"} desc={"Map, allergens and hygiene rating"} onPress={infoOnPress}/>
-              <ButtonBar icon={'star'} header={"4.7 Excellent"} desc={"See all 500 reviews"} mainColor={'#4d7c1b'} />
-              <ButtonBarWithImage icon={'star'} header={"4.7 Excellent"} desc={"See all 500 reviews"} />
+              <ButtonBar icon={"info"} header={"Info"} desc={"Map, allergens and hygiene rating"} onPress={onPressInfo} />
+              <ButtonBar icon={"star"} header={"4.7 Excellent"} desc={"See all 500 reviews"} mainColor={"#4d7c1b"} />
+              <ButtonBarWithImage icon={"star"} header={"4.7 Excellent"} desc={"See all 500 reviews"} onPress={onPressDeliveryMethod}/>
             </View>
-          </View>
-        </View>
-      );
-    };
-
-
-    const CircleButton = ({ onPress, styles }) => {
-      return (
-        <TouchableOpacity style={{
-          // padding:10,
-          backgroundColor: "#FFF",
-          width: 40,
-          height: 40,
-          borderRadius: 100,
-          alignItems: "center",
-          justifyContent: "center",
-          ...styles,
-        }}>
-          <Icon name={"arrow-left"} size={20} color="#03b9aa" />
-        </TouchableOpacity>
-      );
-    };
-
-    const RenderBeans = () => {
-      return (
-        <View style={{ backgroundColor: "#F7f7f7",}}>
-          <FlatList
-            contentContainerStyle={{
-              height: 50,
-              backgroundColor: "#F7f7f7",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-            onScrollToIndexFailed={({
-                                      index,
-                                      averageItemLength,
-                                    }) => {
-              console.log("onScrollToIndexFailed", index);
-              console.log("onScrollToIndexFailed", averageItemLength);
-              console.log("onScrollToIndexFailed", "place", place);
-
-
-            }}
-            ref={beanRef}
-            data={beanDummy}
-            horizontal={true}
-            showsHorizontalScrollIndicator={false}
-            renderItem={({ item, index }) => <Bean value={item} />} />
-          <View>
-            <Text>Adults need around 2000 kcal a day</Text>
           </View>
         </View>
       );
@@ -216,79 +124,50 @@ const HomeScreen = () => {
 
     const renderItem = ({ item, index }) => {
       if (index === 0) {
-        return <RenderBeans />;
+        return (<BeanBar {...{ place, beanRef, scrollRef, dummyData }}/>);
       } else {
         return (
-          <View style={{ height: 100, backgroundColor: "#F7f7f7" }}>
-            <Text>{item}</Text>
-            <Text>{index}</Text>
+          <View style={{ backgroundColor: "#F7f7f7" }}>
+            <View style={{
+              backgroundColor: COLORS.WHITE,
+              paddingHorizontal: 10,
+              paddingVertical: 20,
+              justifyContent: "center",
+            }}>
+              {index === 1 ? <Text>{item.headerSectionTitle}</Text> : null}
+              <Text style={{ fontFamily: FONTS.MEDIUM, fontSize: 20, color: COLORS.BLACK }}>{item.title}</Text>
+            </View>
+            {item.data.map((foodItem, i) => {
+              return <FoodItem key={i}  {...{ ...foodItem, index }} />;
+            })}
           </View>
         );
       }
     };
 
-    const Bean = ({ value }) => {
-      const onPressBean = () => {
-        scrollRef.current?.scrollToIndex({ animated: true, index: 10 });
-      };
-      return (
-        <TouchableOpacity
-          onPress={onPressBean}
-          style={{
-            width: "auto",
-            backgroundColor: "red",
-            marginLeft: 10,
-            paddingVertical: 5,
-            paddingHorizontal: 7,
-            borderRadius: 100,
-          }}>
-          <Text>{value}</Text>
-        </TouchableOpacity>
-      );
-    };
 
     return (
       <SafeAreaProvider>
         <SafeAreaView>
-          <View
-            style={{
-              height: 60,
-              backgroundColor: "#FFFFFF",
-              flexDirection: "row",
-              paddingLeft: 10,
-              paddingRight: 20,
-              paddingVertical: 10,
-              justifyContent: "space-between",
-              alignItems: "center",
-            }}>
-            <Image
-              source={IMAGES.HEADER_LOGO}
-              style={{ height: 25, width: 100, resizeMode: "contain" }}
-            />
-            <Button icon={"search"} text={""} />
-            <Button
-              icon={"user"}
-              text={"Account"}
-              styles={{ marginLeft: "auto" }}
-            />
-          </View>
+          <HeaderWithSearchAndAccount onPressSearch={onPressSearch} onPressAccount={()=>{}}/>
 
           {/* scrollRef?.current.scrollToIndex({ animated: true, index: 0 })  */}
 
           <FlatList
             ref={scrollRef}
-            data={beanDummy}
+            data={[{},...dummyData]}
             ItemSeparatorComponent={
-              <View style={{ height: 10, backgroundColor: "green" }} />
+              <View style={{ height: 2, backgroundColor: COLORS.GRAY }} />
             }
             renderItem={renderItem}
             ListHeaderComponent={headerComponent}
-            ListFooterComponent={<View style={{height:300, backgroundColor:'gray'}}/>}
-            stickyHeaderIndices={[0, 1]}
+            ListFooterComponent={<View style={{ height: 300, backgroundColor: "gray" }} />}
+            stickyHeaderIndices={[1]}
             initialNumToRender={60}
             onViewableItemsChanged={handleViewableItemsChanged.current}
           />
         </SafeAreaView>
+        <BottomPopUp visible={deliveryMethod} setVisibility={()=>setDeliveryMethod(false)}/>
       </SafeAreaProvider>
     );
   }
