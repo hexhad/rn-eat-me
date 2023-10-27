@@ -127,13 +127,6 @@ const HomeScreen = () => {
       RootNavigation.navigate(SCREEN_NAMES.MODAL)
     }
     const headerComponent = () => {
-      // return (
-      //   <ImageBackground
-      //     source={IMAGES.HERO_COVER_IMAGE}
-      //     resizeMode={"cover"}
-      //     style={{ flex: 1, width: "100%" }}
-      //   />
-      // );
       return (
         <View style={{backgroundColor:'#FFF'}}>
           <ImageBackground
@@ -191,28 +184,33 @@ const HomeScreen = () => {
 
     const RenderBeans = () => {
       return (
-        <FlatList
-          contentContainerStyle={{
-            height: 50,
-            backgroundColor: "#F7f7f7",
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-          onScrollToIndexFailed={({
-                                    index,
-                                    averageItemLength,
-                                  }) => {
-            console.log("onScrollToIndexFailed", index);
-            console.log("onScrollToIndexFailed", averageItemLength);
-            console.log("onScrollToIndexFailed", "place", place);
+        <View style={{ backgroundColor: "#F7f7f7",}}>
+          <FlatList
+            contentContainerStyle={{
+              height: 50,
+              backgroundColor: "#F7f7f7",
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            onScrollToIndexFailed={({
+                                      index,
+                                      averageItemLength,
+                                    }) => {
+              console.log("onScrollToIndexFailed", index);
+              console.log("onScrollToIndexFailed", averageItemLength);
+              console.log("onScrollToIndexFailed", "place", place);
 
 
-          }}
-          ref={beanRef}
-          data={beanDummy}
-          horizontal={true}
-          showsHorizontalScrollIndicator={false}
-          renderItem={({ item, index }) => <Bean value={item} />} />
+            }}
+            ref={beanRef}
+            data={beanDummy}
+            horizontal={true}
+            showsHorizontalScrollIndicator={false}
+            renderItem={({ item, index }) => <Bean value={item} />} />
+          <View>
+            <Text>Adults need around 2000 kcal a day</Text>
+          </View>
+        </View>
       );
     };
 
@@ -231,7 +229,7 @@ const HomeScreen = () => {
 
     const Bean = ({ value }) => {
       const onPressBean = () => {
-        beanRef.current?.scrollToIndex({ animated: true, index: 10 });
+        scrollRef.current?.scrollToIndex({ animated: true, index: 10 });
       };
       return (
         <TouchableOpacity
@@ -285,7 +283,7 @@ const HomeScreen = () => {
             }
             renderItem={renderItem}
             ListHeaderComponent={headerComponent}
-            ListFooterComponent={headerComponent}
+            ListFooterComponent={<View style={{height:300, backgroundColor:'gray'}}/>}
             stickyHeaderIndices={[0, 1]}
             initialNumToRender={60}
             onViewableItemsChanged={handleViewableItemsChanged.current}
