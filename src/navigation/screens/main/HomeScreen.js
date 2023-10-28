@@ -43,7 +43,7 @@ const mapDispatch = {};
 const connector = connect(mapProps, mapDispatch);
 
 const HomeScreen = () => {
-    const [place, setPlace] = useState(0);
+    const [place, setPlace] = useState(1);
     const [deliveryMethod, setDeliveryMethod] = useState(false);
 
     const scrollRef = useRef({
@@ -55,18 +55,9 @@ const HomeScreen = () => {
     const beanRef = useRef();
     const handleViewableItemsChanged = useRef(({ viewableItems, changed }) => {
       let sizeOfTheArray = viewableItems[0]?.index;
-      setPlace(sizeOfTheArray);
-      if(dummyData.length>sizeOfTheArray){
-        console.log('sizeOfTheArray',sizeOfTheArray);
-        beanRef.current?.scrollToIndex({ animated: true, index: sizeOfTheArray+1 ?? 0 });
-      }
+      let preProcess = sizeOfTheArray===0?1:sizeOfTheArray
+      setPlace(preProcess);
     });
-
-    useEffect(() => {
-      if (Platform.OS === "android") {
-        SplashScreen?.hide();
-      }
-    }, []);
 
 
     const { width } = useWindowDimensions();
@@ -78,8 +69,11 @@ const HomeScreen = () => {
     const onPressSearch = () => {
       RootNavigation.navigate(SCREEN_NAMES.SEARCH_MODAL);
     };
+    const onPressAccount = () => {
+      RootNavigation.navigate(SCREEN_NAMES.ACCOUNT_MODAL);
+    };
     const onPressDeliveryMethod = () => {
-      setDeliveryMethod(true)
+      setDeliveryMethod(true);
     };
 
 
@@ -115,7 +109,8 @@ const HomeScreen = () => {
 
               <ButtonBar icon={"info"} header={"Info"} desc={"Map, allergens and hygiene rating"} onPress={onPressInfo} />
               <ButtonBar icon={"star"} header={"4.7 Excellent"} desc={"See all 500 reviews"} mainColor={"#4d7c1b"} />
-              <ButtonBarWithImage icon={"star"} header={"4.7 Excellent"} desc={"See all 500 reviews"} onPress={onPressDeliveryMethod}/>
+              <ButtonBarWithImage icon={"star"} header={"4.7 Excellent"} desc={"See all 500 reviews"}
+                                  onPress={onPressDeliveryMethod} />
             </View>
           </View>
         </View>
@@ -124,7 +119,7 @@ const HomeScreen = () => {
 
     const renderItem = ({ item, index }) => {
       if (index === 0) {
-        return (<BeanBar {...{ place, beanRef, scrollRef, dummyData }}/>);
+        return (<BeanBar {...{ place, beanRef, scrollRef, dummyData }} />);
       } else {
         return (
           <View style={{ backgroundColor: "#F7f7f7" }}>
@@ -149,13 +144,13 @@ const HomeScreen = () => {
     return (
       <SafeAreaProvider>
         <SafeAreaView>
-          <HeaderWithSearchAndAccount onPressSearch={onPressSearch} onPressAccount={()=>{}}/>
+          <HeaderWithSearchAndAccount onPressSearch={onPressSearch} onPressAccount={onPressAccount} />
 
           {/* scrollRef?.current.scrollToIndex({ animated: true, index: 0 })  */}
 
           <FlatList
             ref={scrollRef}
-            data={[{},...dummyData]}
+            data={[{}, ...dummyData]}
             ItemSeparatorComponent={
               <View style={{ height: 2, backgroundColor: COLORS.GRAY }} />
             }
@@ -165,9 +160,17 @@ const HomeScreen = () => {
             stickyHeaderIndices={[1]}
             initialNumToRender={60}
             onViewableItemsChanged={handleViewableItemsChanged.current}
+            onScrollEndDrag={() => {
+              console.log('onScrollEndDrag',place < 1 ? 1 : place - 1);
+              console.log('onScrollEndDrag','place',place);
+              beanRef.current?.scrollToIndex({ animated: true, index: place < 1 ? 1 : place - 1 });
+            }}
+            onScrollBeginDrag={() => {
+              // console.log("start");
+            }}
           />
         </SafeAreaView>
-        <BottomPopUp visible={deliveryMethod} setVisibility={()=>setDeliveryMethod(false)}/>
+        <BottomPopUp visible={deliveryMethod} setVisibility={() => setDeliveryMethod(false)} />
       </SafeAreaProvider>
     );
   }

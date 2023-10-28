@@ -6,6 +6,7 @@ import ButtonBar from "../../buttons/ButtonBar";
 import ButtonBarWithImage from "../../buttons/ButtonBarWithImage";
 import React from "react";
 import { IMAGES } from "../../../assets/images";
+import { COLORS } from "../../../constants/colors";
 
 export default ({onPressSearch,onPressAccount,showSearch=true}) => {
   return(
@@ -19,6 +20,8 @@ export default ({onPressSearch,onPressAccount,showSearch=true}) => {
         paddingVertical: 10,
         justifyContent: "space-between",
         alignItems: "center",
+        borderBottomWidth:1,
+        borderBottomColor:COLORS.GRAY_HIGH
       }}>
       <Image
         source={IMAGES.HEADER_LOGO}

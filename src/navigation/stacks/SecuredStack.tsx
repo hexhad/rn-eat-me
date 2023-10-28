@@ -7,6 +7,8 @@ import InfoModal from "../screens/Modal/InfoModal";
 import SearchModal from "../screens/Modal/SearchModal";
 import AccountModal from "../screens/Modal/AccountModal";
 import ShippingModal from "../screens/Modal/ShippingModal";
+import WebViewModal from "../screens/Modal/WebViewModal";
+
 
 const Stack = createStackNavigator();
 
@@ -41,6 +43,11 @@ const SecuredStack = (): JSX.Element => {
       <Stack.Screen
         name={SCREEN_NAMES.DELIVERY_MODAL}
         component={ShippingModal}
+        // options={{headerShown: false}}
+      />
+      <Stack.Screen
+        name={SCREEN_NAMES.WEB_VIEW}
+        component={WebViewModal}
         // options={{headerShown: false}}
       />
       </Stack.Group>
