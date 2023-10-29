@@ -11,5 +11,6 @@ export const SCREEN_NAMES = {
 
   WEB_VIEW: 'WEB_VIEW',
 
-  LOGIN:'LOGIN',
+  LOGIN: 'LOGIN',
+  EMAIL_SCREEN: 'EMAIL_SCREEN',
 };

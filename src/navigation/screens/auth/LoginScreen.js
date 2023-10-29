@@ -59,74 +59,73 @@ const LoginScreen = ({login, loading, fetchAuth}) => {
   const onPressAccount = () => {
     RootNavigation.navigate(SCREEN_NAMES.ACCOUNT_MODAL);
   };
+  const onPressMailButton = () => {
+    RootNavigation.navigate(SCREEN_NAMES.EMAIL_SCREEN);
+  };
   return (
-    <>
-      <SafeAreaView>
-        <ScrollView>
-          <HeaderWithSearchAndAccount
-            showSearch={false}
-            onPressAccount={onPressAccount}
+    <SafeAreaView>
+      <ScrollView>
+        <HeaderWithSearchAndAccount
+          showSearch={false}
+          onPressAccount={onPressAccount}
+        />
+        <View style={styles.mainContainer}>
+          <Text
+            style={{
+              fontFamily: FONTS.BOLD,
+              color: COLORS.BLACK,
+              fontSize: 20,
+              marginVertical: 20,
+            }}>
+            Sign up or log in
+          </Text>
+          <AuthButton
+            type={VARIANT_TYPES.FACEBOOK}
+            onPress={() => {
+              fetchAuth();
+              fetchAuth({username: 'kminchelle', password: '0lelplR'});
+            }}
+            styles={{}}
           />
-          <View style={styles.mainContainer}>
-            <Text
-              style={{
-                fontFamily: FONTS.BOLD,
-                color: COLORS.BLACK,
-                fontSize: 20,
-                marginVertical: 20,
-              }}>
-              Sign up or log in{' '}
-            </Text>
-            <AuthButton
-              type={VARIANT_TYPES.FACEBOOK}
-              onPress={() => {
-                fetchAuth();
-                fetchAuth({username:'kminchelle',password:'0lelplR'});
-              }}
-              styles={{}}
-            />
-            <AuthButton
-              type={VARIANT_TYPES.GOOGLE}
-              onPress={() => {
-                login();
-              }}
-              styles={{}}
-            />
-            <AuthButton
-              type={VARIANT_TYPES.APPLE}
-              onPress={() => {
-                login();
-              }}
-              styles={{}}
-            />
-            <SeparatorWithCustomWord word={'or'} />
-            <AuthButton
-              type={VARIANT_TYPES.MAIL}
-              onPress={() => {
-                login();
-              }}
-              styles={{}}
-            />
-            <Text style={{marginVertical: 20}}>
-              By continuing you agree to our{' '}
-              <HyperlinkText onPress={tandcOnPress}>T&Cs</HyperlinkText>. Please
-              also check out our{' '}
-              <HyperlinkText onPress={privacyPolicyOnPress}>
-                Privacy Policy
-              </HyperlinkText>
-              . We use your data to offer you a personalised experience and to
-              better understand and improve our services.{' '}
-              <HyperlinkText onPress={moreDetailsOnPress}>
-                For more information see here
-              </HyperlinkText>
-              .
-            </Text>
-          </View>
-          <FooterSection data={footerContent} />
-          <Loader visible={loading} />
-        </ScrollView>
-      </SafeAreaView>
-    </>
+          <AuthButton
+            type={VARIANT_TYPES.GOOGLE}
+            onPress={() => {
+              login();
+            }}
+            styles={{}}
+          />
+          <AuthButton
+            type={VARIANT_TYPES.APPLE}
+            onPress={() => {
+              login();
+            }}
+            styles={{}}
+          />
+          <SeparatorWithCustomWord word={'or'} />
+          <AuthButton
+            type={VARIANT_TYPES.MAIL}
+            onPress={onPressMailButton}
+            styles={{}}
+          />
+          <Text style={{marginVertical: 20}}>
+            By continuing you agree to our{' '}
+            <HyperlinkText onPress={tandcOnPress}>T&Cs</HyperlinkText>. Please
+            also check out our{' '}
+            <HyperlinkText onPress={privacyPolicyOnPress}>
+              Privacy Policy
+            </HyperlinkText>
+            . We use your data to offer you a personalised experience and to
+            better understand and improve our services.{' '}
+            <HyperlinkText onPress={moreDetailsOnPress}>
+              For more information see here
+            </HyperlinkText>
+            .
+          </Text>
+        </View>
+        <FooterSection data={footerContent} />
+        <Loader visible={loading} />
+      </ScrollView>
+    </SafeAreaView>
   );
 };
 
