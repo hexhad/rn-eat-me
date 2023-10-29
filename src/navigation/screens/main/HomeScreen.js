@@ -28,13 +28,14 @@ import ButtonBarWithImage from "../../../components/buttons/ButtonBarWithImage";
 import ButtonBar from "../../../components/buttons/ButtonBar";
 import CircleButton from "../../../components/buttons/CircleButton";
 import FoodItem from "../../../components/listItems/FoodItem";
-import { dummyData } from "../../../constants/dummyData";
+import { dummyData, footerContent } from "../../../constants/dummyData";
 import Bean from "../../../components/buttons/Bean";
 import BeanBar from "../../../components/buttons/BeanBar";
 import BottomPopUp from "../../../components/modals/BottomPopUp";
 import HeaderWithSearchAndAccount from "../../../components/headers/HeaderWithSearchAndAccount";
+import FooterSection from "../../../components/footer/FooterSection";
 
-const mapProps = (state: {state: any}) => {
+const mapProps = (state) => {
   console.log(state);
   return {};
 };
@@ -77,6 +78,12 @@ const HomeScreen = () => {
     };
 
 
+    const footerComponent = () => {
+      return (
+          <FooterSection data={footerContent} />
+      )
+    }
+
     const headerComponent = () => {
 
       return (
@@ -96,7 +103,7 @@ const HomeScreen = () => {
               position: "absolute",
               bottom: 0, right: 0, marginRight: 10, marginBottom: 10,
             }}>
-              <Button icon={"search"} text={"Start group order"} styles={{ width: "auto", backgroundColor: "#FFF" }} />
+              <Button icon={"users"} text={"Start group order"} styles={{ width: "auto", backgroundColor: "#FFF" }} />
             </View>
           </ImageBackground>
           <View>
@@ -133,7 +140,7 @@ const HomeScreen = () => {
               <Text style={{ fontFamily: FONTS.MEDIUM, fontSize: 20, color: COLORS.BLACK }}>{item.title}</Text>
             </View>
             {item.data.map((foodItem, i) => {
-              return <FoodItem key={i}  {...{ ...foodItem, index }} />;
+              return (<FoodItem key={i}  {...{ ...foodItem, index, onPress:()=>{RootNavigation.navigate(SCREEN_NAMES.ITEM_MODAL,{foodItem})}}} />)
             })}
           </View>
         );
@@ -156,7 +163,7 @@ const HomeScreen = () => {
             }
             renderItem={renderItem}
             ListHeaderComponent={headerComponent}
-            ListFooterComponent={<View style={{ height: 300, backgroundColor: "gray" }} />}
+            ListFooterComponent={footerComponent}
             stickyHeaderIndices={[1]}
             initialNumToRender={60}
             onViewableItemsChanged={handleViewableItemsChanged.current}

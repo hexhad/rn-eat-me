@@ -1,104 +1,787 @@
-export const dummyData = [{
-  headerSectionTitle: "Adults need around 2000 kcal a day",
-  title: "New Daily Specials",
-  data: [{
-    special: true,
-    available: true,
-    popular: true,
-    currency: "£",
-    kcal: "229 kcal",
-    desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotonscheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-    name: "dummyName",
-    price: "12",
-    image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-  }, {
-    // special:true,
-    available: true,
-    popular: true,
-    currency: "£",
-    kcal: "229 kcal",
-    desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-    name: "shawarma wrap with shawarma chicken DAILY SPECIAL chicken DAILY SPECIAL chicken DAILY SPECIAL",
-    price: "12",
-    image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-  }, {
-    // special:true,
-    available: false,
-    // popular:true,
-    currency: "£",
-    kcal: "229 kcal",
-    desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-    name: "shawarma wrap with shawarma chicken DAILY SPECIAL",
-    price: "12",
-    image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-  }],
-},
+export const dummyData = [
   {
-    headerSectionTitle: "Adults need around 2000 kcal a day",
-    title: "New Daily Specials",
-    data: [{
-      special: true,
-      available: true,
-      popular: true,
-      currency: "£",
-      kcal: "229 kcal",
-      desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotonscheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-      name: "dummyName",
-      price: "12",
-      image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-    }, {
-      // special:true,
-      available: true,
-      popular: true,
-      currency: "£",
-      kcal: "229 kcal",
-      desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-      name: "shawarma wrap with shawarma chicken DAILY SPECIAL chicken DAILY SPECIAL chicken DAILY SPECIAL",
-      price: "12",
-      image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-    }, {
-      // special:true,
-      available: false,
-      // popular:true,
-      currency: "£",
-      kcal: "229 kcal",
-      desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-      name: "shawarma wrap with shawarma chicken DAILY SPECIAL",
-      price: "12",
-      image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-    }],
-  },{
-    headerSectionTitle: "Adults need around 2000 kcal a day",
-    title: "New Daily Specials",
-    data: [{
-      special: true,
-      available: true,
-      popular: true,
-      currency: "£",
-      kcal: "229 kcal",
-      desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotonscheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-      name: "dummyName",
-      price: "12",
-      image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-    }, {
-      // special:true,
-      available: true,
-      popular: true,
-      currency: "£",
-      kcal: "229 kcal",
-      desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-      name: "shawarma wrap with shawarma chicken DAILY SPECIAL chicken DAILY SPECIAL chicken DAILY SPECIAL",
-      price: "12",
-      image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-    }, {
-      // special:true,
-      available: false,
-      // popular:true,
-      currency: "£",
-      kcal: "229 kcal",
-      desc: "Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy Crispy bacon with sweetcorn, cheddar, roasted tomatoes,Crispy bacon with sweetcorn, cheddar, roasted tomatoes,  carrot, crotons and caesar dressing",
-      name: "shawarma wrap with shawarma chicken DAILY SPECIAL",
-      price: "12",
-      image: "https://rs-menus-api.roocdn.com/images/896a82da-8dd7-4d65-b373-546698ac309e/image.jpeg?width=294&height=294&auto=webp&format=jpg&fit=crop",
-    }],
-  }]
+    headerSectionTitle: 'Adults need around 2000 kcal a day',
+    title: 'New Daily Specials',
+    data: [
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+  {
+    headerSectionTitle: 'Adults need around 2000 kcal a day',
+    title: 'New Daily Specials',
+    data: [
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+      {
+        special: true,
+        available: true,
+        popular: true,
+        currency: '£',
+        kcal: '462 kcal',
+        desc: 'Winter sunshine: UK reared red tractor chicken served on basmati rice and sweet poatato mash, with seasonal green veg, brazilian black bean sauce, pickled red onion and finished with a sprinking of fresh herbs.',
+        name: 'BBQ Wrap',
+        price: 12,
+        image:
+          'https://rs-menus-api.roocdn.com/images/61006812-71b4-4119-b7a1-54531fef50bf/image.jpeg?width=226.4000033736229&height=150.40000224113464&auto=webp&format=jpg&fit=crop',
+        bottomData: [
+          {
+            type: 'extra',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'additional',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+          {
+            type: 'variety',
+            data: {
+              title: 'boost your protein',
+              ingredient: [
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+                {
+                  title: 'grilled chicken thighs',
+                  desc: 'No known allergens. 126 kcal',
+                  currency: '+£',
+                  price: 2.69,
+                },
+              ],
+            },
+          },
+        ],
+      },
+    ],
+  },
+];
+
+export const footerContent = [
+  {
+    title: 'Discover Deliveroo',
+    subtitles: [
+      'Investors',
+      'About Us',
+      'Take Away',
+      'More',
+      'Newsroom',
+      'Engineering Blog',
+      'Design Blog',
+      'Gift Cards',
+      'Deliveroo Students',
+      'Careers',
+      'Resturant signup',
+      'Become a rider',
+    ],
+  },
+  {
+    title: 'Discover Deliveroo',
+    subtitles: [
+      'Investors',
+      'About Us',
+      'Take Away',
+      'More',
+      'Newsroom',
+      'Engineering Blog',
+      'Design Blog',
+      'Gift Cards',
+      'Deliveroo Students',
+      'Careers',
+      'Resturant signup',
+      'Become a rider',
+    ],
+  },
+];
