@@ -63,6 +63,18 @@ yarn start --resetCache
 ```
 
 # Screenshots
-
-![]()
+### Login Screen - Assumption : when pressing social button auth will automatically happening
+![](/screenshots/1.jpg)
+### Email Login Screen
+![](/screenshots/2.jpg)
+### Home Screen
+![](/screenshots/3.jpg)
+### Popup Modal
+![](/screenshots/4.jpg)
+### Account Screen
+![](/screenshots/5.jpg)
+### Home Screen - Scrolled
+![](/screenshots/6.jpg)
+### Links - Webview
+![](/screenshots/7.jpg)
 
