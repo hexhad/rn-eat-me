@@ -1,16 +1,12 @@
 import React from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from "react-native";
-import { RootNavigation } from "../../rootNavigation";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import Icon from "react-native-vector-icons/Feather";
-import { FONTS } from "../../../constants/fonts";
+import {SafeAreaView, StyleSheet, Text, View} from 'react-native';
 
 
-const RatingModal = (): JSX.Element => {
+const RatingModal = () => {
   return (
     <SafeAreaView>
       <View>
-{/*<Header  titile={'Info'}/>*/}
+        <Text>Rating</Text>
       </View>
     </SafeAreaView>
   );

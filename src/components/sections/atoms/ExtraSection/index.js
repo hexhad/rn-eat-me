@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {FONTS} from '../../../../constants/fonts';
 import {COLORS} from '../../../../constants/colors';
 import Icon from 'react-native-vector-icons/Feather';
@@ -7,24 +7,12 @@ import React from 'react';
 export default ({data}) => {
   const ExtraItem = ({item: {title, desc, price, currency}, onPress}) => {
     return (
-      <TouchableOpacity
-        onPress={onPress}
-        style={{
-          flexDirection: 'row',
-          marginVertical: 5,
-          justifyContent: 'center',
-        }}>
+      <TouchableOpacity onPress={onPress} style={mainStyles.touchableWrapper}>
         <View>
-          <Text
-            style={{
-              fontFamily: FONTS.MEDIUM,
-              fontSize: 14,
-            }}>
-            {title}
-          </Text>
+          <Text style={mainStyles.title}>{title}</Text>
           <Text>{desc}</Text>
         </View>
-        <View style={{flexDirection: 'row', marginLeft: 'auto'}}>
+        <View style={mainStyles.addItemWrapper}>
           <View style={{paddingRight: 10}}>
             <Text>{`${currency} ${price}`}</Text>
           </View>
@@ -37,18 +25,29 @@ export default ({data}) => {
   };
   return (
     <View>
-      <Text
-        style={{
-          fontFamily: FONTS.MEDIUM,
-          fontSize: 16,
-          color: COLORS.BLACK,
-          marginVertical: 10,
-        }}>
-        {data.title}
-      </Text>
+      <Text style={mainStyles.titleText}>{data.title}</Text>
       {data.ingredient.map((e, i) => (
         <ExtraItem item={e} key={i} onPress={() => {}} />
       ))}
     </View>
   );
 };
+
+const mainStyles = StyleSheet.create({
+  titleText: {
+    fontFamily: FONTS.MEDIUM,
+    fontSize: 16,
+    color: COLORS.BLACK,
+    marginVertical: 10,
+  },
+  touchableWrapper: {
+    flexDirection: 'row',
+    marginVertical: 5,
+    justifyContent: 'center',
+  },
+  title: {
+    fontFamily: FONTS.MEDIUM,
+    fontSize: 14,
+  },
+  addItemWrapper: {flexDirection: 'row', marginLeft: 'auto'},
+});

@@ -1,7 +1,6 @@
-import { AUTH, DUMMY } from "../types";
-import { delayFor } from "../../utils/shortHands";
-import { RootNavigation } from "../../navigation/rootNavigation";
-import { SCREEN_NAMES } from "../../constants/screens";
+import {AUTH} from '../types';
+import {delayFor} from '../../utils/shortHands';
+import {RootNavigation} from '../../navigation/rootNavigation';
 
 const loginAction = () => async (dispatch, getState) => {
   try {
@@ -18,7 +17,7 @@ const logoutAction = () => async (dispatch, getState) => {
     dispatch({type: AUTH.LOADING});
     dispatch({type: AUTH.CLEAR});
     // RootNavigation.restStack( [{ name: SCREEN_NAMES.LOGIN }])
-    RootNavigation.popToTop()
+    RootNavigation.popToTop();
   } catch (e) {
     dispatch({type: AUTH.FAILED, payload: e});
   }
@@ -26,5 +25,5 @@ const logoutAction = () => async (dispatch, getState) => {
 
 export const AuthActionsOld = {
   loginAction,
-  logoutAction
+  logoutAction,
 };

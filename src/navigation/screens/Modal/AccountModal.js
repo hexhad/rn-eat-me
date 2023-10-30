@@ -11,7 +11,7 @@ import {COLORS} from '../../../constants/colors';
 import {fetchAuth, logOut} from '../../../redux/reducers/authReducer';
 import DropDown from '../../../components/DropDown';
 import Icon from 'react-native-vector-icons/Feather';
-import { SCREEN_NAMES } from "../../../constants/screens";
+import {SCREEN_NAMES} from '../../../constants/screens';
 
 const mapState = () => ({});
 
@@ -26,9 +26,10 @@ const AccountModal = ({logout}) => {
       title: 'Eat Me',
       url: ' https://deliveroo.co.uk/faq',
     });
-  }
+  };
+
   return (
-    <SafeAreaView style={{flex: 1}}>
+    <SafeAreaView style={styles.flexWrapper}>
       <HeaderWithClose titile={''} logoEnabled={true} />
       <ScrollView>
         <View style={styles.mainContainer}>
@@ -40,31 +41,14 @@ const AccountModal = ({logout}) => {
           />
         </View>
         <View>
-          <TouchableOpacity
-            onPress={onPressFAQs}
-            style={{
-              flexDirection: 'row',
-              backgroundColor: COLORS.WHITE,
-              borderColor: COLORS.GRAY_HIGH,
-              borderWidth: 1,
-              marginVertical: 15,
-              padding: 10,
-            }}>
+          <TouchableOpacity onPress={onPressFAQs} style={styles.FaqStyles}>
             <Icon
               name={'help-circle'}
               size={25}
               color={COLORS.GRAY_FOOTER_MIDDLE}
             />
-            <Text
-              style={{
-                marginLeft: 10,
-                fontFamily: FONTS.REGULAR,
-                color: COLORS.GRAY_FOOTER_MIDDLE,
-                fontSize: 16,
-              }}>
-              FAQs
-            </Text>
-            <View style={{marginLeft: 'auto'}}>
+            <Text style={styles.FaqText}>FAQs</Text>
+            <View style={styles.dragMeRight}>
               <Icon
                 name={'chevron-right'}
                 size={25}
@@ -84,11 +68,25 @@ const AccountModal = ({logout}) => {
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: COLORS.WHITE,
     paddingHorizontal: 15,
     marginTop: 10,
-    // height: '100%',
   },
+  flexWrapper: {flex: 1},
+  FaqStyles: {
+    flexDirection: 'row',
+    backgroundColor: COLORS.WHITE,
+    borderColor: COLORS.GRAY_HIGH,
+    borderWidth: 1,
+    marginVertical: 15,
+    padding: 10,
+  },
+  FaqText: {
+    marginLeft: 10,
+    fontFamily: FONTS.REGULAR,
+    color: COLORS.GRAY_FOOTER_MIDDLE,
+    fontSize: 16,
+  },
+  dragMeRight: {marginLeft: 'auto'},
 });
 
 export default connector(AccountModal);

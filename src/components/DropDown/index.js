@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import Icon from 'react-native-vector-icons/Feather';
 import {COLORS} from '../../constants/colors';
@@ -16,26 +16,8 @@ export default ({data, onChange}) => {
     setVisible(prevState => !prevState);
   };
   return (
-    <TouchableOpacity
-      onPress={onPressHandle}
-      style={{
-        flexDirection: 'row',
-        backgroundColor: COLORS.WHITE,
-        borderColor: COLORS.GRAY_HIGH,
-        borderWidth: 1,
-        marginHorizontal: 15,
-        marginVertical: 5,
-        padding: 10,
-        borderRadius: 3,
-      }}>
-      <Text
-        style={{
-          fontFamily: FONTS.REGULAR,
-          color: COLORS.GRAY_FOOTER_MIDDLE,
-          fontSize: 16,
-        }}>
-        {selected}
-      </Text>
+    <TouchableOpacity onPress={onPressHandle} style={mainStyles.container}>
+      <Text style={mainStyles.selected}>{selected}</Text>
       <View style={{marginLeft: 'auto'}}>
         <Icon
           name={'chevrons-up'}
@@ -54,3 +36,21 @@ export default ({data, onChange}) => {
     </TouchableOpacity>
   );
 };
+
+const mainStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    backgroundColor: COLORS.WHITE,
+    borderColor: COLORS.GRAY_HIGH,
+    borderWidth: 1,
+    marginHorizontal: 15,
+    marginVertical: 5,
+    padding: 10,
+    borderRadius: 3,
+  },
+  selected: {
+    fontFamily: FONTS.REGULAR,
+    color: COLORS.GRAY_FOOTER_MIDDLE,
+    fontSize: 16,
+  },
+});

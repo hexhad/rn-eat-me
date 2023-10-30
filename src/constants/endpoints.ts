@@ -1,3 +1,3 @@
 export const API = {
-  AUTH:'auth/login',
-}
+  AUTH: 'auth/login',
+};

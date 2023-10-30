@@ -1,8 +1,8 @@
-import React, {JSX} from 'react';
+import React from 'react';
 
-export const buildProvidersTree = (componentWithProps) => {
+export const buildProvidersTree = componentWithProps => {
   return componentWithProps.reduce(
-    (AccumulatedComps, [Provider , props = {}]) =>
+    (AccumulatedComps, [Provider, props = {}]) =>
       ({children}) =>
         (
           <AccumulatedComps>

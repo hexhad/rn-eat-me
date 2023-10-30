@@ -1,20 +1,10 @@
 import React from 'react';
-import {
-  Pressable,
-  SafeAreaView,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {SafeAreaView, ScrollView, StyleSheet, Text, View} from 'react-native';
 import HeaderWithSearchAndAccount from '../../../components/headers/HeaderWithSearchAndAccount';
 import SeparatorWithCustomWord from '../../../components/buttons/separator/SeparatorWithCustomWord';
 import {COLORS} from '../../../constants/colors';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {useAuth} from '../../stacks/RootStack';
 import {connect} from 'react-redux';
 import {AuthActionsOld} from '../../../redux/actions/authActionsOld';
-// import AuthButton, { VARIANT_TYPES } from "../../../components/buttons/AuthButton";
 import {FONTS} from '../../../constants/fonts';
 import {RootNavigation} from '../../rootNavigation';
 import {SCREEN_NAMES} from '../../../constants/screens';
@@ -22,7 +12,6 @@ import Loader from '../../../components/placeholders/Loader';
 import AuthButton, {
   VARIANT_TYPES,
 } from '../../../components/buttons/AuthButton';
-import FooterContainer from '../../../components/footer/FooterContainer';
 import FooterSection from '../../../components/footer/FooterSection';
 import {footerContent} from '../../../constants/dummyData';
 import HyperlinkText from '../../../components/HyperlinkText';
@@ -62,6 +51,16 @@ const LoginScreen = ({login, loading, fetchAuth}) => {
   const onPressMailButton = () => {
     RootNavigation.navigate(SCREEN_NAMES.EMAIL_SCREEN);
   };
+  const onPressGoogle = () => {
+    fetchAuth({username: 'kminchelle', password: '0lelplR'});
+  };
+  const onPressFacebook = () => {
+    fetchAuth({username: 'kminchelle', password: '0lelplR'});
+  };
+  const onPressApple = () => {
+    fetchAuth({username: 'kminchelle', password: '0lelplR'});
+  };
+
   return (
     <SafeAreaView>
       <ScrollView>
@@ -70,35 +69,20 @@ const LoginScreen = ({login, loading, fetchAuth}) => {
           onPressAccount={onPressAccount}
         />
         <View style={styles.mainContainer}>
-          <Text
-            style={{
-              fontFamily: FONTS.BOLD,
-              color: COLORS.BLACK,
-              fontSize: 20,
-              marginVertical: 20,
-            }}>
-            Sign up or log in
-          </Text>
+          <Text style={styles.title}>Sign up or log in</Text>
           <AuthButton
             type={VARIANT_TYPES.FACEBOOK}
-            onPress={() => {
-              fetchAuth();
-              fetchAuth({username: 'kminchelle', password: '0lelplR'});
-            }}
+            onPress={onPressFacebook}
             styles={{}}
           />
           <AuthButton
             type={VARIANT_TYPES.GOOGLE}
-            onPress={() => {
-              login();
-            }}
+            onPress={onPressGoogle}
             styles={{}}
           />
           <AuthButton
             type={VARIANT_TYPES.APPLE}
-            onPress={() => {
-              login();
-            }}
+            onPress={onPressApple}
             styles={{}}
           />
           <SeparatorWithCustomWord word={'or'} />
@@ -133,6 +117,12 @@ const styles = StyleSheet.create({
   mainContainer: {
     backgroundColor: COLORS.WHITE,
     paddingHorizontal: 15,
+  },
+  title: {
+    fontFamily: FONTS.BOLD,
+    color: COLORS.BLACK,
+    fontSize: 20,
+    marginVertical: 20,
   },
 });
 

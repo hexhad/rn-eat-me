@@ -25,8 +25,8 @@ const styles = StyleSheet.create({
     borderColor: COLORS.GRAY_HIGH,
     borderWidth: 2,
     borderRadius: 3,
-    justifyContent:'center',
-    alignItems:'center'
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   checked: {
     width: 12,

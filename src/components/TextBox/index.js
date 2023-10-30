@@ -1,8 +1,8 @@
-import { TextInput, View } from "react-native";
-import { useState } from "react";
-import { COLORS } from "../../constants/colors";
+import {TextInput, View} from 'react-native';
+import {useState} from 'react';
+import {COLORS} from '../../constants/colors';
 
-export default ({ placeholder, onChangeText, defaultText, styles, more }) => {
+export default ({placeholder, onChangeText, defaultText, styles, more}) => {
   const [text, setText] = useState(defaultText);
   const onchange = e => {
     setText(e);

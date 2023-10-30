@@ -1,26 +1,32 @@
-import { IMAGES } from "../../../assets/images";
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { Image, Text, View } from "react-native";
-import { FONTS } from "../../../constants/fonts";
-import React from "react";
+import {IMAGES} from '../../../assets/images';
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {Image, StyleSheet, Text, View} from 'react-native';
+import {FONTS} from '../../../constants/fonts';
+import React from 'react';
 
-export default ({ header, desc, imageLink = IMAGES.METHOD_DELEVER, method = "Deliver", onPress }) => {
+export default ({
+  imageLink = IMAGES.METHOD_DELEVER,
+  method = 'Deliver',
+  onPress,
+}) => {
   return (
-    <TouchableOpacity style={{ flexDirection: "row", alignItems: "center", marginVertical: 15 }} onPress={onPress}>
+    <TouchableOpacity style={mainStyles.container} onPress={onPress}>
       <View>
-        <Image source={imageLink} style={{ height: 25, width: 25, marginRight: 5 }} />
+        <Image source={imageLink} style={mainStyles.imageStyles} />
       </View>
       <View>
-        <Text style={{ fontFamily: FONTS.MEDIUM, fontSize: 15 }}>
-          {method}
-        </Text>
+        <Text style={mainStyles.textMethod}>{method}</Text>
       </View>
-      <View style={{ marginLeft: "auto" }}>
-        <Text style={{ fontFamily: FONTS.MEDIUM, fontSize: 13, color: "#03b9aa" }}>
-          Change
-        </Text>
-
+      <View style={{marginLeft: 'auto'}}>
+        <Text style={mainStyles.textChange}>Change</Text>
       </View>
     </TouchableOpacity>
   );
 };
+
+const mainStyles = StyleSheet.create({
+  container: {flexDirection: 'row', alignItems: 'center', marginVertical: 15},
+  imageStyles: {height: 25, width: 25, marginRight: 5},
+  textMethod: {fontFamily: FONTS.MEDIUM, fontSize: 15},
+  textChange: {fontFamily: FONTS.MEDIUM, fontSize: 13, color: '#03b9aa'},
+});

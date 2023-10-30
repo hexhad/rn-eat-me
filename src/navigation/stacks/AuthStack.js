@@ -1,12 +1,7 @@
 import {createStackNavigator} from '@react-navigation/stack';
-import BottomNavigation from './BottomNavigation';
-import React, {JSX} from 'react';
+import React from 'react';
 import {SCREEN_NAMES} from '../../constants/screens';
-import HomeScreen from '../screens/main/HomeScreen';
-import InfoModal from '../screens/Modal/InfoModal';
-import SearchModal from '../screens/Modal/SearchModal';
 import AccountModal from '../screens/Modal/AccountModal';
-import ShippingModal from '../screens/Modal/ShippingModal';
 import LoginScreen from '../screens/auth/LoginScreen';
 import WebViewModal from '../screens/Modal/WebViewModal';
 import EmailLogin from '../screens/auth/EmailLoginScreen';

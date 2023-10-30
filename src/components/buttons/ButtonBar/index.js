@@ -1,26 +1,42 @@
-import { TouchableOpacity } from "react-native-gesture-handler";
-import { Text, View } from "react-native";
-import { FONTS } from "../../../constants/fonts";
-import React from "react";
-import Icon from "react-native-vector-icons/Feather";
+import {TouchableOpacity} from 'react-native-gesture-handler';
+import {StyleSheet, Text, View} from 'react-native';
+import {FONTS} from '../../../constants/fonts';
+import React from 'react';
+import Icon from 'react-native-vector-icons/Feather';
 
-export default ({ header, desc, icon, mainColor = "#2e3333", onPress }) => {
+export default ({header, desc, icon, mainColor = '#2e3333', onPress}) => {
   return (
-    <TouchableOpacity onPress={onPress} style={{ flexDirection: "row", alignItems: "center", marginVertical: 5 }}>
+    <TouchableOpacity onPress={onPress} style={mainStyles.container}>
       <View>
-        <Icon name={icon} size={20} color={mainColor} style={{ marginRight: 10 }} />
+        <Icon
+          name={icon}
+          size={20}
+          color={mainColor}
+          style={{marginRight: 10}}
+        />
       </View>
       <View>
-        <Text style={{ fontFamily: FONTS.MEDIUM, fontSize: 15, color: mainColor }}>
+        <Text
+          style={{fontFamily: FONTS.MEDIUM, fontSize: 15, color: mainColor}}>
           {header}
         </Text>
-        <Text style={{ fontFamily: FONTS.LIGHT, fontSize: 13 }}>
-          {desc}
-        </Text>
+        <Text style={mainStyles.textDesc}>{desc}</Text>
       </View>
-      <View style={{ marginLeft: "auto" }}>
-        <Icon name={"chevron-right"} size={20} color="#03b9aa" />
+      <View style={{marginLeft: 'auto'}}>
+        <Icon name={'chevron-right'} size={20} color="#03b9aa" />
       </View>
     </TouchableOpacity>
   );
 };
+
+const mainStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginVertical: 5,
+  },
+  textDesc: {
+    fontFamily: FONTS.LIGHT,
+    fontSize: 13,
+  },
+});

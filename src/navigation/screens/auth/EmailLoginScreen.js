@@ -34,7 +34,7 @@ const EmailLoginScreen = ({fetchAuth}) => {
   }, []);
 
   const triggerAuth = () => {
-    console.log('Triggered',{username: userName, password: passWord});
+    console.log('Triggered', {username: userName, password: passWord});
     fetchAuth({username: userName, password: passWord});
   };
 
@@ -43,22 +43,14 @@ const EmailLoginScreen = ({fetchAuth}) => {
   };
 
   return (
-    <SafeAreaView style={{flex: 1, backgroundColor: COLORS.WHITE}}>
+    <SafeAreaView style={styles.container}>
       <KeyboardAwareScrollView>
         <HeaderWithSearchAndAccount
           showSearch={false}
           onPressAccount={onPressAccount}
         />
         <View style={styles.mainContainer}>
-          <Text
-            style={{
-              fontFamily: FONTS.BOLD,
-              color: COLORS.BLACK,
-              fontSize: 20,
-              marginVertical: 20,
-            }}>
-            Sign up or log in
-          </Text>
+          <Text style={styles.title}>Sign up or log in</Text>
           <TextBox
             styles={{}}
             onChangeText={() => {}}
@@ -84,10 +76,15 @@ export default connector(EmailLoginScreen);
 
 const styles = StyleSheet.create({
   mainContainer: {
-    // backgroundColor: COLORS.WHITE,
     paddingHorizontal: 15,
     marginTop: 10,
     marginBottom: 100,
-    // height: '100%',
+  },
+  container: {flex: 1, backgroundColor: COLORS.WHITE},
+  title: {
+    fontFamily: FONTS.BOLD,
+    color: COLORS.BLACK,
+    fontSize: 20,
+    marginVertical: 20,
   },
 });

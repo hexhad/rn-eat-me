@@ -785,3 +785,6 @@ export const footerContent = [
     ],
   },
 ];
+
+
+export const dummyHeroImage = 'https://rs-menus-api.roocdn.com/images/5dab5089-c269-4bbc-afc3-2c711b0970a9/image.jpeg?width=1170&height=657'

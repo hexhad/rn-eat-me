@@ -1,4 +1,4 @@
-import {Text, TouchableOpacity, View} from 'react-native';
+import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import {COLORS} from '../../constants/colors';
 import {FONTS} from '../../constants/fonts';
@@ -19,27 +19,14 @@ export default ({onUpdate}) => {
   };
 
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
+    <View style={mainStyles.container}>
       <View>
         <TouchableOpacity onPress={onPressMinus}>
           <Icon name={'minus-circle'} size={23} color={COLORS.BLACK} />
         </TouchableOpacity>
       </View>
       <View>
-        <Text
-          style={{
-            fontFamily: FONTS.MEDIUM,
-            fontSize: 18,
-            color: COLORS.BLACK,
-            marginHorizontal: 10,
-          }}>
-          {qty}
-        </Text>
+        <Text style={mainStyles.titleText}>{qty}</Text>
       </View>
       <View>
         <TouchableOpacity onPress={onPressPlus}>
@@ -49,3 +36,17 @@ export default ({onUpdate}) => {
     </View>
   );
 };
+
+const mainStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  titleText: {
+    fontFamily: FONTS.MEDIUM,
+    fontSize: 18,
+    color: COLORS.BLACK,
+    marginHorizontal: 10,
+  },
+});

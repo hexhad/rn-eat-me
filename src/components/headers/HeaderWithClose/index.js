@@ -1,4 +1,4 @@
-import {Image, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, View} from 'react-native';
 import {FONTS} from '../../../constants/fonts';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {RootNavigation} from '../../../navigation/rootNavigation';
@@ -9,26 +9,10 @@ import {COLORS} from '../../../constants/colors';
 
 export default ({titile = '', logoEnabled = false}) => {
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        height: 50,
-        backgroundColor: '#FFF',
-        alignItems: 'center',
-        borderColor: COLORS.GRAY,
-        borderBottomWidth: 1,
-      }}>
+    <View style={mainStyles.container}>
       <View style={{flex: 1}}>
         {!!logoEnabled && (
-          <Image
-            source={IMAGES.HEADER_LOGO}
-            style={{
-              height: 25,
-              width: 100,
-              marginLeft: 10,
-              resizeMode: 'contain',
-            }}
-          />
+          <Image source={IMAGES.HEADER_LOGO} style={mainStyles.image} />
         )}
       </View>
       <View style={{flex: 1, alignItems: 'center'}}>
@@ -40,8 +24,6 @@ export default ({titile = '', logoEnabled = false}) => {
         <TouchableOpacity
           onPress={() => RootNavigation.goBack()}
           style={{
-            // width:100,
-            // backgroundColor:'red'
             paddingRight: 10,
           }}>
           <Icon name={'x'} size={20} color="#03b9aa" />
@@ -50,3 +32,20 @@ export default ({titile = '', logoEnabled = false}) => {
     </View>
   );
 };
+
+const mainStyles = StyleSheet.create({
+  container: {
+    flexDirection: 'row',
+    height: 50,
+    backgroundColor: '#FFF',
+    alignItems: 'center',
+    borderColor: COLORS.GRAY,
+    borderBottomWidth: 1,
+  },
+  image: {
+    height: 25,
+    width: 100,
+    marginLeft: 10,
+    resizeMode: 'contain',
+  },
+});

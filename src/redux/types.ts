@@ -4,7 +4,6 @@ export const DUMMY = {
   FAILED: 'DUMMY/FAILED',
 };
 
-
 export const AUTH = {
   LOADING: 'AUTH/LOADING',
   SUCCESS: 'AUTH/SUCCESS',
