@@ -13,14 +13,16 @@ import DropDown from '../../../components/DropDown';
 import Icon from 'react-native-vector-icons/Feather';
 import {SCREEN_NAMES} from '../../../constants/screens';
 
-const mapState = () => ({});
+const mapState = state => ({
+  isLogged: state?.auth?.isLogged,
+});
 
 const mapDispatch = {
   logout: logOut,
 };
 
 const connector = connect(mapState, mapDispatch);
-const AccountModal = ({logout}) => {
+const AccountModal = ({logout, isLogged}) => {
   const onPressFAQs = () => {
     RootNavigation.navigate(SCREEN_NAMES.WEB_VIEW, {
       title: 'Eat Me',
@@ -37,7 +39,7 @@ const AccountModal = ({logout}) => {
             onPress={() => {
               logout();
             }}
-            label={'Sign up or log in'}
+            label={isLogged ? 'Logout' : 'Sign up or log in'}
           />
         </View>
         <View>

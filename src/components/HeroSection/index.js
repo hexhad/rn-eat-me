@@ -4,8 +4,16 @@ import {dummyHeroImage} from '../../constants/dummyData';
 import CircleButton from '../buttons/CircleButton';
 import Button from '../buttons/Button';
 import {FONTS} from '../../constants/fonts';
+import {RootNavigation} from '../../navigation/rootNavigation';
+import {SCREEN_NAMES} from '../../constants/screens';
 
 export default () => {
+  const onClickBackButton = () => {
+    RootNavigation.navigate(SCREEN_NAMES.EXTRA_SCREEN);
+  };
+  const onClickGroupSelection = () => {
+    RootNavigation.navigate(SCREEN_NAMES.EXTRA_SCREEN);
+  };
   return (
     <View>
       <ImageBackground
@@ -17,11 +25,12 @@ export default () => {
         <View>
           <CircleButton
             styles={{marginTop: 10, marginLeft: 10}}
-            onPress={() => {}}
+            onPress={onClickBackButton}
           />
         </View>
         <View style={mainStyles.buttonWrapper}>
           <Button
+            onPress={onClickGroupSelection}
             icon={'users'}
             text={'Start group order'}
             styles={{width: 'auto', backgroundColor: '#FFF'}}

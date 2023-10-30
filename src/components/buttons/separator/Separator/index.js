@@ -1,9 +1,9 @@
 import {StyleSheet, View} from 'react-native';
 import {COLORS} from '../../../../constants/colors';
 
-export default () => {
+export default ({styles}) => {
   return (
-    <View style={mainStyles.container}>
+    <View style={[mainStyles.container, styles]}>
       <View style={mainStyles.middleRow} />
     </View>
   );

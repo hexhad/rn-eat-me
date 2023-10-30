@@ -12,4 +12,6 @@ export const COLORS = {
   BLACK_LOW: '#00000033',
   GOLD: '#E67400',
   BLUE: '#4C69BA',
+  SELECTION_BG:'#F9FAFA',
+  SELECTION_TEXT:'#77BF2A'
 };

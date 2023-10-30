@@ -1,0 +1,12 @@
+diff --git a/node_modules/react-native-star-view/lib/Star.js b/node_modules/react-native-star-view/lib/Star.js
+index 3e7f127..5797b9f 100644
+--- a/node_modules/react-native-star-view/lib/Star.js
++++ b/node_modules/react-native-star-view/lib/Star.js
+@@ -72,6 +72,7 @@ const Styles = StyleSheet.create({
+     alignItems: 'center',
+   },
+   starImg: {
++    tintColor:'green',
+     width: '80%',
+     height: '80%',
+   },

@@ -786,5 +786,73 @@ export const footerContent = [
   },
 ];
 
+export const dummyHeroImage =
+  'https://rs-menus-api.roocdn.com/images/5dab5089-c269-4bbc-afc3-2c711b0970a9/image.jpeg?width=1170&height=657';
 
-export const dummyHeroImage = 'https://rs-menus-api.roocdn.com/images/5dab5089-c269-4bbc-afc3-2c711b0970a9/image.jpeg?width=1170&height=657'
+export const DummyReviews = {
+  totalReview: 4.7,
+  desc: '500+ reviews',
+  bars: [
+    {index: 5, value: 95},
+    {index: 4, value: 5},
+    {index: 3, value: 1},
+    {index: 2, value: 1},
+    {index: 1, value: 3},
+  ],
+  allReviews: [
+    {
+      name: 'Deliveroo Customer',
+      rating: 5,
+      date: '30 June 2023',
+      comment: 'Great Healthy lunch, High in protein.',
+      selection: 'Great selection',
+      avatar:
+        'https://ugc-service.roocdn.com/images/72625e4e635f3beceee8cdae4248fe5118f82669/avatars/profile-default-17.png?width=72&height=72',
+    },
+    {
+      name: 'Deliveroo Customer',
+      rating: 5,
+      date: '30 June 2023',
+      comment: 'Great Healthy lunch, High in protein.',
+      selection: 'Great selection',
+      avatar:
+        'https://ugc-service.roocdn.com/images/72625e4e635f3beceee8cdae4248fe5118f82669/avatars/profile-default-17.png?width=72&height=72',
+    },
+    {
+      name: 'Deliveroo Customer',
+      rating: 5,
+      date: '30 June 2023',
+      comment: 'Great Healthy lunch, High in protein.',
+      selection: 'Great selection',
+      avatar:
+        'https://ugc-service.roocdn.com/images/72625e4e635f3beceee8cdae4248fe5118f82669/avatars/profile-default-17.png?width=72&height=72',
+    },
+    {
+      name: 'Deliveroo Customer',
+      rating: 5,
+      date: '30 June 2023',
+      comment: 'Great Healthy lunch, High in protein.',
+      selection: 'Great selection',
+      avatar:
+        'https://ugc-service.roocdn.com/images/72625e4e635f3beceee8cdae4248fe5118f82669/avatars/profile-default-17.png?width=72&height=72',
+    },
+    {
+      name: 'Deliveroo Customer',
+      rating: 5,
+      date: '30 June 2023',
+      comment: 'Great Healthy lunch, High in protein.',
+      selection: 'Great selection',
+      avatar:
+        'https://ugc-service.roocdn.com/images/72625e4e635f3beceee8cdae4248fe5118f82669/avatars/profile-default-17.png?width=72&height=72',
+    },
+    {
+      name: 'Deliveroo Customer',
+      rating: 5,
+      date: '30 June 2023',
+      comment: 'Great Healthy lunch, High in protein.',
+      selection: 'Great selection',
+      avatar:
+        'https://ugc-service.roocdn.com/images/72625e4e635f3beceee8cdae4248fe5118f82669/avatars/profile-default-17.png?width=72&height=72',
+    },
+  ],
+};

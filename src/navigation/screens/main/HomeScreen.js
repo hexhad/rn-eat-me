@@ -70,6 +70,9 @@ const HomeScreen = () => {
   const onPressInfo = () => {
     RootNavigation.navigate(SCREEN_NAMES.INFO_MODAL);
   };
+  const onPressRating = () => {
+    RootNavigation.navigate(SCREEN_NAMES.RATING_MODAL);
+  };
   const onPressSearch = () => {
     RootNavigation.navigate(SCREEN_NAMES.SEARCH_MODAL);
   };
@@ -100,13 +103,9 @@ const HomeScreen = () => {
             header={'4.7 Excellent'}
             desc={'See all 500 reviews'}
             mainColor={'#4d7c1b'}
+            onPress={onPressRating}
           />
-          <ButtonBarWithImage
-            icon={'star'}
-            header={'4.7 Excellent'}
-            desc={'See all 500 reviews'}
-            onPress={onPressDeliveryMethod}
-          />
+          <ButtonBarWithImage onPress={onPressDeliveryMethod} />
         </View>
       </View>
     );
