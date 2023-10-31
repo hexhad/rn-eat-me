@@ -1,6 +1,7 @@
 import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import {dummyData} from '../../constants/dummyData';
 import {delayFor} from '../../utils/shortHands';
+import { PRODUCT } from "../types";
 
 const initialState = {
   data: [],
@@ -9,7 +10,7 @@ const initialState = {
 };
 
 export const fetchProduct = createAsyncThunk(
-  'product/fetchProduct',
+  PRODUCT.FETCH,
   async () => {
     await delayFor();
     return dummyData;

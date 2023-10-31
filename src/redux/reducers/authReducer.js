@@ -2,6 +2,7 @@ import {createAsyncThunk, createSlice} from '@reduxjs/toolkit';
 import axiosInstance from '../../services/axiosInstance';
 import {API} from '../../constants/endpoints';
 import {RootNavigation} from '../../navigation/rootNavigation';
+import {AUTH} from '../types';
 
 const initialState = {
   isLogged: false,
@@ -16,7 +17,7 @@ const initialState = {
 };
 
 export const fetchAuth = createAsyncThunk(
-  'auth/fetchAuth',
+  AUTH.FETCH,
   async ({username, password}, {getState, dispatch}) => {
     const res = await axiosInstance.post(API.AUTH, {
       // username: 'kminchelle',
@@ -30,8 +31,8 @@ export const fetchAuth = createAsyncThunk(
 );
 
 export const fetchUser = createAsyncThunk(
-  'auth/fetchUser',
-  async (_,{getState, dispatch}) => {
+  AUTH.USER,
+  async (_, {getState, dispatch}) => {
     const res = await axiosInstance.get(`${API.USER}1`);
     return res.data;
   },
