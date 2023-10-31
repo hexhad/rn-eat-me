@@ -1,6 +1,10 @@
 ![](/src/assets/images/img.png)
 
-## Android
+## Clone the project and run 
+```bash
+ yarn install
+```
+# 1. Android
 ```bash
  yarn start --resetCache
 ```
@@ -16,7 +20,7 @@
 ##### 1. first install app using `Android Studio` then `shake` the android device to open menu then go to Settings then Debugging
 ##### 2. Press Debug server host & port for device and add `IPv4 Address` with port (Ex: 192.168.1.102:8081 )
 
-## iOS
+# 2. iOS
 #### install pods
 ```bash
 npx pod-install ios
