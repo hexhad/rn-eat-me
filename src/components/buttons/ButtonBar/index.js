@@ -1,10 +1,10 @@
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {StyleSheet, Text, View} from 'react-native';
 import {FONTS} from '../../../constants/fonts';
-import React from 'react';
+import React, { memo } from "react";
 import Icon from 'react-native-vector-icons/Feather';
 
-export default ({header, desc, icon, mainColor = '#2e3333', onPress}) => {
+export default memo(({header, desc, icon, mainColor = '#2e3333', onPress}) => {
   return (
     <TouchableOpacity onPress={onPress} style={mainStyles.container}>
       <View>
@@ -27,7 +27,7 @@ export default ({header, desc, icon, mainColor = '#2e3333', onPress}) => {
       </View>
     </TouchableOpacity>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

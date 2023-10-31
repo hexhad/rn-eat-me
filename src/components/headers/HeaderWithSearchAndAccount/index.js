@@ -1,10 +1,10 @@
 import {Image, StyleSheet, View} from 'react-native';
 import Button from '../../buttons/Button';
-import React from 'react';
+import React, { memo } from "react";
 import {IMAGES} from '../../../assets/images';
 import {COLORS} from '../../../constants/colors';
 
-export default ({onPressSearch, onPressAccount, showSearch = true}) => {
+export default memo(({onPressSearch, onPressAccount, showSearch = true}) => {
   return (
     <View style={mainStyles.container}>
       <Image source={IMAGES.HEADER_LOGO} style={mainStyles.image} />
@@ -19,7 +19,7 @@ export default ({onPressSearch, onPressAccount, showSearch = true}) => {
       />
     </View>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

@@ -1,7 +1,8 @@
 import {StyleSheet, Text, View} from 'react-native';
 import {COLORS} from '../../../../constants/colors';
+import { memo } from "react";
 
-export default ({word}) => {
+export default memo(({word}) => {
   return (
     <View style={mainStyles.container}>
       <View style={mainStyles.leftLine} />
@@ -9,7 +10,7 @@ export default ({word}) => {
       <View style={mainStyles.rightLine} />
     </View>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

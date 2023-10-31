@@ -2,9 +2,9 @@ import {IMAGES} from '../../../assets/images';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {Image, StyleSheet, Text, View} from 'react-native';
 import {FONTS} from '../../../constants/fonts';
-import React from 'react';
+import React, { memo } from "react";
 
-export default ({
+export default memo(({
   imageLink = IMAGES.METHOD_DELEVER,
   method = 'Deliver',
   onPress,
@@ -22,7 +22,7 @@ export default ({
       </View>
     </TouchableOpacity>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {flexDirection: 'row', alignItems: 'center', marginVertical: 15},

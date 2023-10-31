@@ -1,8 +1,9 @@
 import Icon from 'react-native-vector-icons/Feather';
 import {Text, View} from 'react-native';
 import {COLORS} from '../../constants/colors';
+import {memo} from 'react';
 
-export default ({content}) => {
+export default memo(({content}) => {
   return (
     <View
       style={{flexDirection: 'row', alignItems: 'center', marginVertical: 10}}>
@@ -14,4 +15,4 @@ export default ({content}) => {
       </View>
     </View>
   );
-};
+});

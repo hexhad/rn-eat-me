@@ -1,9 +1,9 @@
 import {FlatList, View, StyleSheet} from 'react-native';
 import {COLORS} from '../../../constants/colors';
 import Bean from '../Bean';
-import React from 'react';
+import React, { memo } from "react";
 
-export default ({place, beanRef, scrollRef, dummyData}) => {
+export default memo( ({place, beanRef, scrollRef, dummyData}) => {
   const titleArray = dummyData.map(e => e?.title);
   return (
     <View style={{backgroundColor: COLORS.WHITE}}>
@@ -43,7 +43,7 @@ export default ({place, beanRef, scrollRef, dummyData}) => {
       />
     </View>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container:{

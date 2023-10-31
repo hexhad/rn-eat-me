@@ -1,6 +1,6 @@
 import {Text} from 'react-native';
 import {COLORS} from '../../constants/colors';
-import React from 'react';
+import React, {memo} from 'react';
 
 const HyperlinkText = ({children, onPress, underlined = true}) => (
   <Text
@@ -13,4 +13,4 @@ const HyperlinkText = ({children, onPress, underlined = true}) => (
   </Text>
 );
 
-export default HyperlinkText;
+export default memo(HyperlinkText);

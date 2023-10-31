@@ -2,12 +2,10 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {FONTS} from '../../../../constants/fonts';
 import {COLORS} from '../../../../constants/colors';
 import Icon from 'react-native-vector-icons/Feather';
-import React from 'react';
+import React, {memo} from 'react';
 import CheckBox from '../../../CheckBox';
 
-export default ({data}) => {
-  console.log(data);
-
+export default memo(({data}) => {
   const AdditionalItem = ({item: {title, desc, price, currency}, onPress}) => {
     return (
       <TouchableOpacity onPress={onPress} style={mainStyles.touchableWrapper}>
@@ -34,7 +32,7 @@ export default ({data}) => {
       ))}
     </View>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   titleText: {

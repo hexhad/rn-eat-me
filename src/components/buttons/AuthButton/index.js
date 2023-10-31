@@ -1,6 +1,7 @@
 import {Text, TouchableOpacity, StyleSheet} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {COLORS} from '../../../constants/colors';
+import {memo} from 'react';
 
 export const VARIANT_TYPES = {
   FACEBOOK: 'FACEBOOK',
@@ -8,7 +9,7 @@ export const VARIANT_TYPES = {
   APPLE: 'APPLE',
   MAIL: 'MAIL',
 };
-export default ({onPress, type, styles}) => {
+export default memo(({onPress, type, styles}) => {
   const VARIANT = {
     FACEBOOK: {
       color: COLORS.BLUE,
@@ -57,7 +58,7 @@ export default ({onPress, type, styles}) => {
       </Text>
     </TouchableOpacity>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   buttonWrapper: {

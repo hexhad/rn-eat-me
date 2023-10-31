@@ -1,10 +1,10 @@
 import {ActivityIndicator, Modal, StyleSheet, View} from 'react-native';
-import React, {JSX, PropsWithChildren} from 'react';
+import React, { JSX, memo, PropsWithChildren } from "react";
 
 type LoaderProps = PropsWithChildren<{
   visible: boolean;
 }>;
-export default ({visible}: LoaderProps): JSX.Element => {
+export default memo(({visible}: LoaderProps): JSX.Element => {
   return (
     <Modal visible={visible} transparent={true}>
       <View style={styles.container}>
@@ -12,7 +12,7 @@ export default ({visible}: LoaderProps): JSX.Element => {
       </View>
     </Modal>
   );
-};
+});
 
 const styles = StyleSheet.create({
   container: {

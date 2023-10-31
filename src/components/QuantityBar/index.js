@@ -2,9 +2,9 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
 import {COLORS} from '../../constants/colors';
 import {FONTS} from '../../constants/fonts';
-import React, {useEffect, useState} from 'react';
+import React, { memo, useEffect, useState } from "react";
 
-export default ({onUpdate}) => {
+export default memo(({onUpdate}) => {
   const [qty, setQty] = useState(1);
 
   useEffect(() => {
@@ -35,7 +35,7 @@ export default ({onUpdate}) => {
       </View>
     </View>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

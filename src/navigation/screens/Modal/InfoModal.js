@@ -40,15 +40,27 @@ const SectionsWithHeader = ({header = '', content = []}) => {
   );
 };
 
+const MiddleContent = () => {
+  return [...Array(10)].map((e, i) => {
+    return (
+      <SectionsWithHeader
+        key={i}
+        header={"About Tossed - St Martin's Lane"}
+        content={[
+          "Questions? Ask Tossed - St Martin's Lane about their ingredients and cooking methods",
+          "Call Tossed - St Martin's Lane on +447541904227",
+        ]}
+      />
+    );
+  });
+};
+
 const InfoModal = () => {
   return (
     <SafeAreaView>
       <HeaderWithClose titile={'Info'} />
-      <ScrollView>
-        <SectionsWithHeader
-          header={"About Tossed - St Martin's Lane"}
-          content={['Tossed Deliveroo Menu']}
-        />
+      <ScrollView contentContainerStyle={{paddingBottom: 100}}>
+        <MiddleContent />
         <SectionsWithHeader
           header={"About Tossed - St Martin's Lane"}
           content={[
@@ -56,18 +68,6 @@ const InfoModal = () => {
             "Call Tossed - St Martin's Lane on +447541904227",
           ]}
         />
-        <SectionsWithHeader
-          header={"About Tossed - St Martin's Lane"}
-          content={['Tossed Deliveroo Menu']}
-        />
-        {/*<View>*/}
-        {/*  <Text>Allergens</Text>*/}
-        {/*</View>*/}
-        {/*<View>*/}
-        {/*  <Text>*/}
-
-        {/*  </Text>*/}
-        {/*</View>*/}
       </ScrollView>
     </SafeAreaView>
   );

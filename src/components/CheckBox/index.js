@@ -1,8 +1,8 @@
 import {TouchableOpacity, View, StyleSheet} from 'react-native';
-import {useEffect, useState} from 'react';
+import { memo, useEffect, useState } from "react";
 import {COLORS} from '../../constants/colors';
 
-export default ({onChange}) => {
+export default memo(({onChange}) => {
   const [checked, setChecked] = useState();
 
   useEffect(() => {
@@ -16,7 +16,7 @@ export default ({onChange}) => {
       {checked && <View style={styles.checked} />}
     </TouchableOpacity>
   );
-};
+});
 
 const styles = StyleSheet.create({
   wrapper: {

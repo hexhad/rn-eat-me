@@ -3,11 +3,11 @@ import {FONTS} from '../../../constants/fonts';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 import {RootNavigation} from '../../../navigation/rootNavigation';
 import Icon from 'react-native-vector-icons/Feather';
-import React from 'react';
+import React, { memo } from "react";
 import {IMAGES} from '../../../assets/images';
 import {COLORS} from '../../../constants/colors';
 
-export default ({titile = '', logoEnabled = false}) => {
+export default memo(({titile = '', logoEnabled = false}) => {
   return (
     <View style={mainStyles.container}>
       <View style={{flex: 1}}>
@@ -31,7 +31,7 @@ export default ({titile = '', logoEnabled = false}) => {
       </View>
     </View>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

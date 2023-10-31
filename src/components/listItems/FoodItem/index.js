@@ -2,9 +2,9 @@ import {TouchableOpacity} from 'react-native-gesture-handler';
 import {COLORS} from '../../../constants/colors';
 import {ImageBackground, StyleSheet, Text, View} from 'react-native';
 import {FONTS} from '../../../constants/fonts';
-import React from 'react';
+import React, { memo } from "react";
 
-export default ({
+export default memo(({
   name,
   price,
   image,
@@ -57,7 +57,7 @@ export default ({
       </View>
     </TouchableOpacity>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

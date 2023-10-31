@@ -8,18 +8,32 @@ const initialState = {
   token: null,
   error: null,
   loading: false,
+  user: {
+    loading: false,
+    error: false,
+    data: [],
+  },
 };
 
 export const fetchAuth = createAsyncThunk(
   'auth/fetchAuth',
-  async ({username, password}) => {
+  async ({username, password}, {getState, dispatch}) => {
     const res = await axiosInstance.post(API.AUTH, {
       // username: 'kminchelle',
       // password: '0lelplR',
       username,
       password,
     });
-    return await res.data.token;
+    dispatch(fetchUser());
+    return res.data.token;
+  },
+);
+
+export const fetchUser = createAsyncThunk(
+  'auth/fetchUser',
+  async (_,{getState, dispatch}) => {
+    const res = await axiosInstance.get(`${API.USER}1`);
+    return res.data;
   },
 );
 
@@ -46,6 +60,31 @@ export const authSlice = createSlice({
       isLogged: false,
       loading: false,
       error: action.error.message,
+    }));
+
+    builder.addCase(fetchUser.pending, state => ({
+      ...state,
+      user: {
+        loading: true,
+        error: false,
+        data: [],
+      },
+    }));
+    builder.addCase(fetchUser.fulfilled, (state, action) => ({
+      ...state,
+      user: {
+        loading: false,
+        error: false,
+        data: action.payload,
+      },
+    }));
+    builder.addCase(fetchUser.rejected, (state, action) => ({
+      ...state,
+      user: {
+        loading: false,
+        error: action.payload,
+        data: [],
+      },
     }));
   },
 });

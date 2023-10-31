@@ -2,6 +2,7 @@ import {StyleSheet, Text, View} from 'react-native';
 import {COLORS} from '../../../constants/colors';
 import FooterContainer from '../FooterContainer';
 import {FONTS} from '../../../constants/fonts';
+import { memo } from "react";
 
 const MiddleContent = ({data}) => {
   return data.map((item, index) => {
@@ -17,13 +18,13 @@ const MiddleContent = ({data}) => {
     );
   });
 };
-export default ({data = []}) => {
+export default memo(({data = []}) => {
   return (
     <FooterContainer>
       <MiddleContent {...{data}} />
     </FooterContainer>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   textUp: {color: COLORS.WHITE, fontFamily: FONTS.MEDIUM, fontSize: 18},

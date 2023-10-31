@@ -10,11 +10,11 @@ import {
 import {COLORS} from '../../../constants/colors';
 import {FONTS} from '../../../constants/fonts';
 import Icon from 'react-native-vector-icons/Feather';
-import React, {useState} from 'react';
+import React, { memo } from "react";
 import {RootNavigation} from '../../../navigation/rootNavigation';
 import {SCREEN_NAMES} from '../../../constants/screens';
 
-export default ({visible = false, setVisibility}) => {
+export default memo(({visible = false, setVisibility}) => {
   const navigateToLocation = () => {
     RootNavigation.navigate(SCREEN_NAMES.DELIVERY_MODAL);
     setVisibility(false);
@@ -36,7 +36,7 @@ export default ({visible = false, setVisibility}) => {
                   <Text style={mainStyles.state}>London</Text>
                 </View>
                 <View style={{flex: 3, marginRight: 10}}>
-                  <Text style={mainStyles.state}>Change</Text>
+                  <Text style={mainStyles.change}>Change</Text>
                 </View>
               </TouchableOpacity>
               <TouchableOpacity
@@ -50,7 +50,7 @@ export default ({visible = false, setVisibility}) => {
       </TouchableWithoutFeedback>
     </Modal>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

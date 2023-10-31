@@ -1,55 +1,45 @@
-import React, {memo, useEffect, useRef, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {
   FlatList,
-  Platform,
   SafeAreaView,
-  ScrollView,
-  Image,
-  SectionList,
   StatusBar,
   StyleSheet,
   Text,
   View,
-  ImageBackground,
   useWindowDimensions,
-  TextInput,
+  RefreshControl,
 } from 'react-native';
 import {FONTS} from '../../../constants/fonts';
-import Icon from 'react-native-vector-icons/Feather';
-import SplashScreen from 'react-native-splash-screen';
 import {connect} from 'react-redux';
 import {SafeAreaProvider} from 'react-native-safe-area-context';
-import {TouchableOpacity} from 'react-native-gesture-handler';
-import {IMAGES} from '../../../assets/images';
-import Button from '../../../components/buttons/Button';
 import {RootNavigation} from '../../rootNavigation';
 import {SCREEN_NAMES} from '../../../constants/screens';
 import {COLORS} from '../../../constants/colors';
 import ButtonBarWithImage from '../../../components/buttons/ButtonBarWithImage';
 import ButtonBar from '../../../components/buttons/ButtonBar';
-import CircleButton from '../../../components/buttons/CircleButton';
 import FoodItem from '../../../components/listItems/FoodItem';
-import {
-  dummyData,
-  dummyHeroImage,
-  footerContent,
-} from '../../../constants/dummyData';
-import Bean from '../../../components/buttons/Bean';
+import {footerContent} from '../../../constants/dummyData';
 import BeanBar from '../../../components/buttons/BeanBar';
 import BottomPopUp from '../../../components/modals/BottomPopUp';
 import HeaderWithSearchAndAccount from '../../../components/headers/HeaderWithSearchAndAccount';
 import FooterSection from '../../../components/footer/FooterSection';
 import HeroSection from '../../../components/HeroSection';
+import {fetchProduct} from '../../../redux/reducers/productReducer';
+import Loader from '../../../components/placeholders/Loader';
 
 const mapProps = state => {
-  console.log(state);
-  return {};
+  return {
+    dummyData: state?.products?.data ?? [],
+    loading: state?.products?.loading,
+  };
 };
 
-const mapDispatch = {};
+const mapDispatch = {
+  fetchProduct,
+};
 const connector = connect(mapProps, mapDispatch);
 
-const HomeScreen = () => {
+const HomeScreen = ({fetchProduct, dummyData, loading}) => {
   const [place, setPlace] = useState(1);
   const [deliveryMethod, setDeliveryMethod] = useState(false);
 
@@ -66,6 +56,12 @@ const HomeScreen = () => {
   });
 
   const {width} = useWindowDimensions();
+
+  useEffect(() => {
+    if (typeof fetchProduct === 'function') {
+      fetchProduct();
+    }
+  }, []);
 
   const onPressInfo = () => {
     RootNavigation.navigate(SCREEN_NAMES.INFO_MODAL);
@@ -150,6 +146,12 @@ const HomeScreen = () => {
           onPressAccount={onPressAccount}
         />
         <FlatList
+          refreshControl={
+            <RefreshControl
+              refreshing={loading}
+              onRefresh={() => fetchProduct()}
+            />
+          }
           ref={scrollRef}
           data={[{}, ...dummyData]}
           ItemSeparatorComponent={<View style={styles.separatorComponent} />}
@@ -174,6 +176,7 @@ const HomeScreen = () => {
         visible={deliveryMethod}
         setVisibility={() => setDeliveryMethod(false)}
       />
+      <Loader visible={loading} />
     </SafeAreaProvider>
   );
 };

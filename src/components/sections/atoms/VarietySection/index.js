@@ -2,9 +2,9 @@ import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {FONTS} from '../../../../constants/fonts';
 import {COLORS} from '../../../../constants/colors';
 import Icon from 'react-native-vector-icons/Feather';
-import React from 'react';
+import React, { memo } from "react";
 
-export default ({data}) => {
+export default memo(({data}) => {
   const VarietyItem = ({item: {title, desc, price, currency}, onPress}) => {
     return (
       <TouchableOpacity onPress={onPress} style={mainStyles.touchableWrapper}>
@@ -31,7 +31,7 @@ export default ({data}) => {
       ))}
     </View>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   titleText: {

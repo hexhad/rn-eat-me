@@ -1,11 +1,11 @@
 import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import React, { memo, useEffect, useState } from "react";
 import Icon from 'react-native-vector-icons/Feather';
 import {COLORS} from '../../constants/colors';
 import {FONTS} from '../../constants/fonts';
 import ListModal from '../modals/ListModal';
 
-export default ({data, onChange}) => {
+export default memo(({data, onChange}) => {
   const [visible, setVisible] = useState(false);
   const [selected, setSelected] = useState(data[0]);
 
@@ -35,7 +35,7 @@ export default ({data, onChange}) => {
       />
     </TouchableOpacity>
   );
-};
+});
 
 const mainStyles = StyleSheet.create({
   container: {

@@ -7,8 +7,9 @@ import {
   View,
 } from 'react-native';
 import {COLORS} from '../../../constants/colors';
+import { memo } from "react";
 
-export default ({visible, data, onChange}) => {
+export default memo(({visible, data, onChange}) => {
   const onPressItem = selection => {
     onChange(selection);
   };
@@ -39,4 +40,4 @@ export default ({visible, data, onChange}) => {
       </View>
     </Modal>
   );
-};
+});

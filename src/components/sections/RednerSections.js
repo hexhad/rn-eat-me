@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {memo} from 'react';
 import {View} from 'react-native';
 import AdditionalSection from './atoms/AdditionalSection';
 import VarietySection from './atoms/VarietySection';
@@ -27,12 +27,14 @@ const SectionFactory = ({item}) => {
       return null;
   }
 };
-export default connector(({data = []}) => {
-  return (
-    <View>
-      {data.map((item, index) => (
-        <SectionFactory item={item} key={index} />
-      ))}
-    </View>
-  );
-});
+export default connector(
+  memo(({data = []}) => {
+    return (
+      <View>
+        {data.map((item, index) => (
+          <SectionFactory item={item} key={index} />
+        ))}
+      </View>
+    );
+  }),
+);
